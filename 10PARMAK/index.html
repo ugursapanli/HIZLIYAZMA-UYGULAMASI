@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>TypeFast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <h1>Hızlıyaz</h1>
+
+  <!-- Süre Seçimi -->
+  <div class="controls">
+    <button onclick="setTime(15)">15s</button>
+    <button onclick="setTime(30)">30s</button>
+    <button onclick="setTime(60)">60s</button>
+  </div>
+
+  <!-- Metin -->
+  <div id="text"></div>
+
+  <!-- Input -->
+  <input
+    id="input"
+    type="text"
+    placeholder="Yazmaya başla..."
+    autocomplete="off"
+    spellcheck="false"
+  />
+
+  <!-- İstatistik -->
+  <div class="stats">
+    <div>Süre: <b id="time">60</b>s</div>
+    <div>WPM: <b id="wpm">0</b></div>
+    <div>Hata: <b id="errors">0</b></div>
+  </div>
+</div>
+
+<!-- Sonuç -->
+<div id="resultScreen" class="result hidden">
+  <h2>Test Bitti</h2>
+  <p>WPM: <b id="finalWpm">0</b></p>
+  <p>Hata: <b id="finalErrors">0</b></p>
+  <p>Doğruluk: <b id="finalAccuracy">0%</b></p>
+  <button onclick="restartGame()">Tekrar Oyna</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

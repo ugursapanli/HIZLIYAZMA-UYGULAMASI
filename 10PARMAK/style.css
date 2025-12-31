@@ -1,0 +1,248 @@
+/* =========================
+   RESET & TEMEL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #020617;
+  --bg-soft: #020617;
+  --border: #1e293b;
+
+  --text-main: #e5e7eb;
+  --text-soft: #94a3b8;
+
+  --green: #22c55e;
+  --red: #ef4444;
+  --blue: #38bdf8;
+  --yellow: #facc15;
+}
+
+body {
+  background: radial-gradient(
+    circle at top,
+    #020617 0%,
+    #020617 40%,
+    #0f172a 100%
+  );
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   APP KART
+========================= */
+.app {
+  width: 440px;
+  max-width: 95%;
+  background: linear-gradient(
+    180deg,
+    #020617 0%,
+    #020617 100%
+  );
+  border-radius: 18px;
+  padding: 26px 24px 24px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* =========================
+   BAŞLIK
+========================= */
+h1 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   SÜRE BUTONLARI
+========================= */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.controls button {
+  flex: 1;
+  background: #020617;
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  padding: 8px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  background: #020617;
+  color: var(--text-main);
+  border-color: var(--blue);
+}
+
+/* =========================
+   METİN ALANI
+========================= */
+#text {
+  background: #020617;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  color: var(--text-soft);
+  height: 110px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  user-select: none;
+}
+
+/* =========================
+   HARF RENKLERİ
+========================= */
+.correct {
+  color: var(--green);
+}
+
+.incorrect {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* =========================
+   INPUT
+========================= */
+#input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #020617;
+  color: var(--text-main);
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 16px;
+  transition: border 0.2s ease;
+}
+
+#input:focus {
+  border-color: var(--blue);
+}
+
+/* =========================
+   İSTATİSTİKLER
+========================= */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.stats b {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* =========================
+   RESULT SCREEN
+========================= */
+.result {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.result h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-size: 18px;
+  color: var(--text-soft);
+}
+
+.result b {
+  color: var(--text-main);
+}
+
+.result button {
+  margin-top: 18px;
+  padding: 12px 28px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    #0ea5e9
+  );
+  color: #020617;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.result button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* =========================
+   HIDDEN
+========================= */
+.hidden {
+  display: none;
+}
+
+/* =========================
+   ANİMASYON
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   MOBİL
+========================= */
+@media (max-width: 480px) {
+  .app {
+    padding: 20px;
+  }
+
+  #text {
+    font-size: 16px;
+    height: 100px;
+  }
+}
