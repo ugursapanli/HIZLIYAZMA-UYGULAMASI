@@ -181,3 +181,7 @@ inputEl.addEventListener("input", () => {
 /* ========================= START ========================= */
 restartGame();
 
+function setTime(seconds) {
+  totalTime = seconds;
+  restartGame();
+}
